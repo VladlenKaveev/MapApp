@@ -1,42 +1,36 @@
 import firebase from "../../firebase/index";
-import { Alert, Text, View } from "react-native";
-import { useSelector, useDispatch } from "react-redux";
+import { Alert } from "react-native";
 import * as yup from "yup";
 
-export const checkUser = () => {
-  const { navigation } = this.props;
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      console.log("Вход подтвержден!");
-      navigation.navigate("Home");
-    } else {
-      Alert.alert("Вы не вошли в аккаунт!");
-    }
-  });
-};
+// export const checkUser = () => {
+//   firebase.auth().onAuthStateChanged((user) => {
+//     if (user) {
+//       console.log("Вход подтвержден!");
+//       navigation.navigate("Home");
+//     } else {
+//       Alert.alert("Вы не вошли в аккаунт!");
+//     }
+//   });
+// };  Откуда взять navigation?
 
-export const signIn = (email, password) => {
-  const { navigation } = this.props;
+export const signInUser = (email, password) => {
   firebase
     .auth()
     .signInWithEmailAndPassword(email, password)
     .then(function () {
-      Alert.alert("Вы успешно вошли в аккаунт!");
-      navigation.navigate("HomeScreen");
+      console.log("Вы успешно вошли в аккаунт!");
     })
     .catch(function (error) {
-      Alert.alert(error.message);
+      console.log(error.message);
     });
 };
 
 export const signOut = () => {
-  const { navigation } = this.props;
   firebase
     .auth()
     .signOut()
     .then(function () {
       Alert.alert("Вы вышли из аккаунта!");
-      navigation.navigate("LoginScreen");
     })
     .catch(function (error) {
       Alert.alert(error);

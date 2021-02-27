@@ -12,9 +12,8 @@ import {
   Input,
   Left,
 } from "native-base";
-import { signUp, userData } from "../../../core/root";
+import { signUp } from "../../../core/root";
 import { useDispatch } from "react-redux";
-import { Field, Form, Formik } from "formik";
 
 const { width } = Dimensions.get("window");
 
