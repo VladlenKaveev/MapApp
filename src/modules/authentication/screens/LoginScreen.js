@@ -1,17 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, Dimensions, Alert } from "react-native";
-import {
-  Container,
-  Card,
-  CardItem,
-  Label,
-  Button,
-  Header,
-  Input,
-} from "native-base";
+import { StyleSheet, Dimensions } from "react-native";
+import { Container, Card, CardItem, Label, Button, Input } from "native-base";
 import { useDispatch } from "react-redux";
 import { signIn } from "../../../core/root";
 import firebase from "../../firebase";
+import MainHeader from "../../header/MainHeader";
 
 const { width } = Dimensions.get("window");
 
@@ -33,7 +26,7 @@ export default function LoginScreen({ initialState, navigation }) {
 
   return (
     <Container style={styles.container}>
-      <Header style={styles.header} />
+      <MainHeader />
       <Card transparent style={{ alignItems: "center" }}>
         <CardItem>
           <Label

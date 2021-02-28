@@ -1,19 +1,9 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import { StyleSheet, Dimensions } from "react-native";
-import {
-  Container,
-  Content,
-  Card,
-  CardItem,
-  Label,
-  Button,
-  Text,
-  Header,
-  Input,
-  Left,
-} from "native-base";
+import { Container, Card, CardItem, Label, Button, Input } from "native-base";
 import { signUp } from "../../../core/root";
 import { useDispatch } from "react-redux";
+import MainHeader from "../../header/MainHeader";
 
 const { width } = Dimensions.get("window");
 
@@ -23,7 +13,7 @@ export default function CreateUserScreen({ initialState }) {
   const dispatch = useDispatch();
   return (
     <Container style={styles.container}>
-      <Header style={styles.header} />
+      <MainHeader />
       <Card transparent style={{ alignItems: "center" }}>
         <CardItem>
           <Label
