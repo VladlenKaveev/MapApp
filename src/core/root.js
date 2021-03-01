@@ -16,14 +16,14 @@ const userSlice = createSlice({
         email: action.payload.email,
         password: action.payload.password,
       });
-      createUser(action.payload.email.email, action.payload.password.password);
+      createUser(action.payload.email, action.payload.password);
     },
     signIn: (state, action) => {
       state.loginData.push({
         email: action.payload.email,
         password: action.payload.password,
       });
-      signInUser(action.payload.email.email, action.payload.password.password);
+      signInUser(action.payload.email, action.payload.password);
     },
   },
 });

@@ -5,6 +5,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import LoginScreen from "../authentication/screens/LoginScreen";
 import CreateUserScreen from "../authentication/screens/CreateUserScreen";
 import HomeScreen from "../home/screens/HomeScreen";
+import LoadingScreen from "../authentication/screens/LoadingScreen";
 
 const Stack = createStackNavigator();
 
@@ -14,6 +15,11 @@ class Navigation extends Component {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
+            name="LoadingScreen"
+            component={LoadingScreen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
             name="LoginScreen"
             component={LoginScreen}
             options={{ headerShown: false }}
@@ -21,7 +27,7 @@ class Navigation extends Component {
           <Stack.Screen
             name="CreateUserScreen"
             component={CreateUserScreen}
-            options={{ headerShown: false }}
+            options={{ headerShown: false, headerBackTitleVisible: true }}
           />
           <Stack.Screen
             name="HomeScreen"

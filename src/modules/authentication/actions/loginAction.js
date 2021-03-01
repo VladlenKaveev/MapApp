@@ -2,16 +2,17 @@ import firebase from "../../firebase/index";
 import { Alert } from "react-native";
 import * as yup from "yup";
 
-// export const checkUser = () => {
-//   firebase.auth().onAuthStateChanged((user) => {
-//     if (user) {
-//       console.log("Вход подтвержден!");
-//       navigation.navigate("Home");
-//     } else {
-//       Alert.alert("Вы не вошли в аккаунт!");
-//     }
-//   });
-// };  Откуда взять navigation?
+export const checkUser = (navigation) => {
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      console.log("Вход подтвержден!");
+      navigation.navigate("HomeScreen");
+    } else {
+      console.log("Вы не вошли в аккаунт!");
+      navigation.navigate("LoginScreen");
+    }
+  });
+};
 
 export const signInUser = (email, password) => {
   firebase
@@ -21,7 +22,7 @@ export const signInUser = (email, password) => {
       console.log("Вы успешно вошли в аккаунт!");
     })
     .catch(function (error) {
-      console.log(error.message);
+      Alert.alert(error.message);
     });
 };
 
@@ -45,12 +46,11 @@ export const createUser = (email, password) => {
       console.log(user);
     })
     .catch((err) => {
-      console.log(err);
+      Alert.alert(err);
     });
 };
 
 export const signUpValidationSchema = yup.object().shape({
-  fullName: yup.string().required("Full name is required"),
   email: yup
     .string()
     .email("Please enter valid email")
@@ -66,4 +66,15 @@ export const signUpValidationSchema = yup.object().shape({
     .string()
     .oneOf([yup.ref("password")], "Passwords do not match")
     .required("Confirm password is required"),
+});
+
+export const signInValidationSchema = yup.object().shape({
+  email: yup
+    .string()
+    .email("Please enter valid email")
+    .required("Email is required"),
+  password: yup
+    .string()
+    .min(8, ({ min }) => `Password must be at least ${min} characters`)
+    .required("Password is required"),
 });

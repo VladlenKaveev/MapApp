@@ -8,8 +8,8 @@
   <uses-permission android:name="android.permission.VIBRATE"/>
   <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
   <!-- These require runtime permissions on M -->
-  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
   <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
   <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
   <uses-permission android:name="android.permission.CAMERA"/>
   <uses-permission android:name="android.permission.RECORD_AUDIO"/>
@@ -29,6 +29,7 @@
     android:allowBackup="false"
     android:theme="@style/AppTheme"
   >
+    <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyCIEmaKmyIg4dv_hRq2gQ2FiUE87x9phWk"/>
     <meta-data android:name="expo.modules.updates.EXPO_UPDATE_URL" android:value="YOUR-APP-URL-HERE"/>
     <meta-data android:name="expo.modules.updates.EXPO_SDK_VERSION" android:value="YOUR-APP-SDK-VERSION-HERE"/>
     <activity
@@ -38,6 +39,7 @@
       android:launchMode="singleTask"
       android:windowSoftInputMode="adjustResize"
       android:theme="@style/Theme.App.SplashScreen"
+      android:screenOrientation="portrait"
     >
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>

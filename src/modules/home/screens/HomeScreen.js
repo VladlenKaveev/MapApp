@@ -1,16 +1,6 @@
-import React, { Component, useState, useEffect } from "react";
-import { View, StyleSheet, Dimensions } from "react-native";
-import {
-  Container,
-  Content,
-  Card,
-  CardItem,
-  Label,
-  Button,
-  Text,
-  Input,
-  Left,
-} from "native-base";
+import React from "react";
+import { StyleSheet, Dimensions } from "react-native";
+import { Container, Content, Card, CardItem, Label, Button } from "native-base";
 import { signOut } from "../../authentication/actions/loginAction";
 import Map from "../../map/components/Map";
 import MainHeader from "../../header/MainHeader";
@@ -71,9 +61,10 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 30,
     color: "#FFFFFF",
+    fontFamily: "RobotoSlab-Bold",
   },
   label_map: {
-    fontSize: 14,
+    fontSize: 16,
     color: "#FFFFFF",
   },
 });
