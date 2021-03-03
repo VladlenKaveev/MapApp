@@ -13,7 +13,7 @@ import { useDispatch } from "react-redux";
 import { signIn } from "../store";
 import MainHeader from "../../header/MainHeader";
 import { Formik } from "formik";
-import { signInValidationSchema } from "../actions/loginAction";
+import { signInValidationSchema } from "../validation/validationSchema";
 import Icon from "react-native-vector-icons/FontAwesome";
 
 const { width } = Dimensions.get("window");

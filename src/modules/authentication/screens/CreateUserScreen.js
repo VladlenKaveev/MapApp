@@ -13,7 +13,7 @@ import { signUp } from "../store";
 import { useDispatch } from "react-redux";
 import MainHeader from "../../header/MainHeader";
 import { Formik } from "formik";
-import { signUpValidationSchema } from "../actions/loginAction";
+import { signUpValidationSchema } from "../validation/validationSchema";
 import Icon from "react-native-vector-icons/FontAwesome";
 import ImagePicker from "../components/ImagePicker";
 
