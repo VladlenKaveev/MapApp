@@ -1,11 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {
-  createUser,
-  signInUser,
-} from "../modules/authentication/actions/loginAction";
+import { createUser, signInUser } from "../actions/loginAction";
 
 const userSlice = createSlice({
-  name: "user",
+  name: "auth",
   initialState: {
     userData: [],
     loginData: [],

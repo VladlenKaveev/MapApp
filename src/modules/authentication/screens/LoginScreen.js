@@ -10,7 +10,7 @@ import {
   Text,
 } from "native-base";
 import { useDispatch } from "react-redux";
-import { signIn } from "../../../core/root";
+import { signIn } from "../store";
 import MainHeader from "../../header/MainHeader";
 import { Formik } from "formik";
 import { signInValidationSchema } from "../actions/loginAction";

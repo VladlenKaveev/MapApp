@@ -9,7 +9,7 @@ import {
   Input,
   Text,
 } from "native-base";
-import { signUp } from "../../../core/root";
+import { signUp } from "../store";
 import { useDispatch } from "react-redux";
 import MainHeader from "../../header/MainHeader";
 import { Formik } from "formik";
